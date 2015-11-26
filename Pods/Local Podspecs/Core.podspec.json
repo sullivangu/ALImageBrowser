@@ -1,0 +1,46 @@
+{
+  "name": "Core",
+  "version": "1.0.0",
+  "summary": "A repo that we put base and kernel code.",
+  "description": "* ApiProxy\n* NetworkServiceDefinition\n* Common Basis",
+  "homepage": "http://gitlab.corp.anjuke.com/_ios/Core",
+  "license": "MIT (example)",
+  "authors": {
+    "LenyeMeng": "lenyemeng@anjukeinc.com",
+    "David.Tang": "daweitang@anjuke.com"
+  },
+  "platforms": {
+    "ios": "6.0"
+  },
+  "source": {
+    "git": "git@gitlab.corp.anjuke.com:_ios/Core.git",
+    "tag": "0.0.1"
+  },
+  "exclude_files": "Classes/Exclude",
+  "prefix_header_file": "AIFCore/AIFCore-Prefix.pch",
+  "frameworks": [
+    "CoreGraphics",
+    "CoreData"
+  ],
+  "requires_arc": true,
+  "subspecs": [
+    {
+      "name": "Bases",
+      "source_files": [
+        "AIFCore/Bases/BaseModel.{h,m}",
+        "AIFCore/Bases/RTSingleton.{h,m}"
+      ],
+      "requires_arc": true
+    },
+    {
+      "name": "Category",
+      "source_files": "AIFCore/Category",
+      "requires_arc": true
+    },
+    {
+      "name": "Util",
+      "source_files": "AIFCore/Util",
+      "requires_arc": true
+    }
+  ]
+}

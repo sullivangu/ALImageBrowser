@@ -1,0 +1,43 @@
+PODS:
+  - Core (1.0.0):
+    - Core/Bases (= 1.0.0)
+    - Core/Category (= 1.0.0)
+    - Core/Util (= 1.0.0)
+  - Core/Bases (1.0.0)
+  - Core/Category (1.0.0)
+  - Core/Util (1.0.0)
+  - Masonry (0.6.3)
+  - MBProgressHUD (0.9.1)
+  - PSTAlertController (1.1.0)
+  - SDWebImage (3.7.3):
+    - SDWebImage/Core (= 3.7.3)
+  - SDWebImage/Core (3.7.3)
+  - UIActivityIndicator-for-SDWebImage (1.2):
+    - SDWebImage (~> 3.7)
+
+DEPENDENCIES:
+  - Core (from `git@gitlab.corp.anjuke.com:_ios/Core.git`)
+  - Masonry (~> 0.6)
+  - MBProgressHUD (~> 0.9.1)
+  - PSTAlertController (= 1.1.0)
+  - SDWebImage (~> 3.7)
+  - UIActivityIndicator-for-SDWebImage (~> 1.2)
+
+EXTERNAL SOURCES:
+  Core:
+    :git: git@gitlab.corp.anjuke.com:_ios/Core.git
+
+CHECKOUT OPTIONS:
+  Core:
+    :commit: eb1b3572c2b28f356e71a086f70599ef1648836d
+    :git: git@gitlab.corp.anjuke.com:_ios/Core.git
+
+SPEC CHECKSUMS:
+  Core: b5288a0d93f66c002726f2d2fb8597dedabd754f
+  Masonry: ff105a956abcd19a618b2028b121cb638d7a8e2f
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+  PSTAlertController: cb21afcfa76c3229feec7db044afd4f60dab5892
+  SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
+  UIActivityIndicator-for-SDWebImage: 7bf7ebbf0ed1747dedc0d6e949c4603a6d0f9e0c
+
+COCOAPODS: 0.39.0
