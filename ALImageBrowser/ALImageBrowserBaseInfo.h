@@ -20,6 +20,7 @@ typedef NS_ENUM(NSInteger,ALImageViewInfoType) {
 //本地图片或者远端图片
 @property (nonatomic, assign) ALImageViewInfoType type;
 @property (nonatomic, assign) CGRect rect;
+@property (nonatomic, strong) NSURL *url;
 
 //获取图片
 @property (nonatomic, readonly) UIImage *image;

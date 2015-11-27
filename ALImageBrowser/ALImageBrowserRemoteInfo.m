@@ -10,6 +10,7 @@
 
 @implementation ALImageBrowserRemoteInfo
 
+
 - (instancetype)init {
     if (self = [super init]) {
         self.type = ALImageViewInfoTypeRemoteImage;

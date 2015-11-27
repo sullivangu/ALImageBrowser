@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ViewController.
 //  ALImageBrowser
 //
 //  Created by Sullivan.Gu on 15/11/25.

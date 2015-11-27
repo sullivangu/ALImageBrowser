@@ -11,6 +11,7 @@
 #import "PSTAlertController.h"
 #import "MBProgressHUD+ALShowAlert.h"
 #import "Masonry.h"
+#import "ALImageBrowserDismissAnimator.h"
 
 @interface ALImageBrowserViewController () <ALImageBrowserViewDelegate>
 
@@ -30,7 +31,7 @@
     self.imageBrowserView.delegate = self;
     [self.imageBrowserView reloadDataAtIndex:self.startIndex];
     [self.imageBrowserView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
+        make.top.bottom.left.right.equalTo(self.view);
     }];
 }
 
@@ -44,18 +45,14 @@
 }
 
 - (void)imageBrowserView:(ALImageBrowserView *)imageBrowserView singleTapAtInfo:(ALImageBrowserBaseInfo *)info imageViewCurrentRect:(CGRect)rect{
-    [self dismissViewControllerAnimated:YES completion:^{}];
+    if ([self.delegate respondsToSelector:@selector(imageBrowserViewController:didQuitWithInfo:lastRect:)]) {
+        [self.delegate imageBrowserViewController:self didQuitWithInfo:info lastRect:rect];
+    }
+   // [self dismissViewControllerAnimated:YES completion:^{}];
 }
 
 - (NSArray *)imageBrowserInfoArrayForImageBrowserView:(ALImageBrowserView *)imageBrowserView {
     return self.infoArray;
-}
-
-#pragma private method
-- (void)gobackWithInfo:(ALImageBrowserBaseInfo *)info lastRect:(CGRect)rect{
-    if ([self.delegate respondsToSelector:@selector(imageBrowserViewController:didQuitWithInfo:lastRect:)]) {
-        [self.delegate imageBrowserViewController:self didQuitWithInfo:info lastRect:rect];
-    }
 }
 
 #pragma menu

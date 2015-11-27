@@ -12,16 +12,20 @@
 		7F239F341C05750500D2DBCD /* ALImageBrowserScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F239F331C05750500D2DBCD /* ALImageBrowserScrollView.m */; settings = {ASSET_TAGS = (); }; };
 		7F239F371C0576AA00D2DBCD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F239F351C0576AA00D2DBCD /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		7F239F3A1C05778D00D2DBCD /* ALImageBrowserBaseInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F239F391C05778D00D2DBCD /* ALImageBrowserBaseInfo.m */; settings = {ASSET_TAGS = (); }; };
+		7F3C77391C082C4500815040 /* XXTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3C77381C082C4500815040 /* XXTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		7F3F0E751C06A1AF00A67A0E /* ALImageBrowserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3F0E741C06A1AF00A67A0E /* ALImageBrowserView.m */; settings = {ASSET_TAGS = (); }; };
 		7F3F0E781C06B49800A67A0E /* MBProgressHUD+ALShowAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3F0E771C06B49800A67A0E /* MBProgressHUD+ALShowAlert.m */; settings = {ASSET_TAGS = (); }; };
 		7F3F0E7E1C06B53000A67A0E /* ALImageBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3F0E7D1C06B53000A67A0E /* ALImageBrowserViewController.m */; settings = {ASSET_TAGS = (); }; };
 		7F3F0E811C06D0E200A67A0E /* ALImageBrowserRemoteInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3F0E801C06D0E200A67A0E /* ALImageBrowserRemoteInfo.m */; settings = {ASSET_TAGS = (); }; };
 		7F3F0E841C06D10400A67A0E /* ALImageBrowserLocalInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3F0E831C06D10400A67A0E /* ALImageBrowserLocalInfo.m */; settings = {ASSET_TAGS = (); }; };
+		7F4A7A011C06F5B200DCF717 /* ALImageBrowserBaseAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4A7A001C06F5B200DCF717 /* ALImageBrowserBaseAnimator.m */; settings = {ASSET_TAGS = (); }; };
+		7F4A7A041C06F6BC00DCF717 /* ALImageBrowserPresentAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4A7A031C06F6BC00DCF717 /* ALImageBrowserPresentAnimator.m */; settings = {ASSET_TAGS = (); }; };
+		7F4A7A071C06F6D700DCF717 /* ALImageBrowserDismissAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4A7A061C06F6D700DCF717 /* ALImageBrowserDismissAnimator.m */; settings = {ASSET_TAGS = (); }; };
+		7F4A7A091C06FDDA00DCF717 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F4A7A081C06FDDA00DCF717 /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
 		7F77633A1C055F3F0034DA87 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F7763391C055F3F0034DA87 /* main.m */; };
 		7F77633D1C055F3F0034DA87 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F77633C1C055F3F0034DA87 /* AppDelegate.m */; };
 		7F7763401C055F3F0034DA87 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F77633F1C055F3F0034DA87 /* ViewController.m */; };
 		7F7763451C055F3F0034DA87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F7763441C055F3F0034DA87 /* Assets.xcassets */; };
-		7F7763481C055F3F0034DA87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F7763461C055F3F0034DA87 /* LaunchScreen.storyboard */; };
 		7F7763531C055F3F0034DA87 /* ALImageBrowserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F7763521C055F3F0034DA87 /* ALImageBrowserTests.m */; };
 		7F77635E1C055F3F0034DA87 /* ALImageBrowserUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F77635D1C055F3F0034DA87 /* ALImageBrowserUITests.m */; };
 /* End PBXBuildFile section */
@@ -50,6 +54,8 @@
 		7F239F361C0576AA00D2DBCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7F239F381C05778D00D2DBCD /* ALImageBrowserBaseInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALImageBrowserBaseInfo.h; sourceTree = "<group>"; };
 		7F239F391C05778D00D2DBCD /* ALImageBrowserBaseInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALImageBrowserBaseInfo.m; sourceTree = "<group>"; };
+		7F3C77371C082C4500815040 /* XXTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXTableViewCell.h; sourceTree = "<group>"; };
+		7F3C77381C082C4500815040 /* XXTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXTableViewCell.m; sourceTree = "<group>"; };
 		7F3F0E731C06A1AF00A67A0E /* ALImageBrowserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALImageBrowserView.h; sourceTree = "<group>"; };
 		7F3F0E741C06A1AF00A67A0E /* ALImageBrowserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALImageBrowserView.m; sourceTree = "<group>"; };
 		7F3F0E761C06B49800A67A0E /* MBProgressHUD+ALShowAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+ALShowAlert.h"; sourceTree = "<group>"; };
@@ -60,6 +66,13 @@
 		7F3F0E801C06D0E200A67A0E /* ALImageBrowserRemoteInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALImageBrowserRemoteInfo.m; sourceTree = "<group>"; };
 		7F3F0E821C06D10400A67A0E /* ALImageBrowserLocalInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALImageBrowserLocalInfo.h; sourceTree = "<group>"; };
 		7F3F0E831C06D10400A67A0E /* ALImageBrowserLocalInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALImageBrowserLocalInfo.m; sourceTree = "<group>"; };
+		7F4A79FF1C06F5B200DCF717 /* ALImageBrowserBaseAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALImageBrowserBaseAnimator.h; sourceTree = "<group>"; };
+		7F4A7A001C06F5B200DCF717 /* ALImageBrowserBaseAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALImageBrowserBaseAnimator.m; sourceTree = "<group>"; };
+		7F4A7A021C06F6BC00DCF717 /* ALImageBrowserPresentAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALImageBrowserPresentAnimator.h; sourceTree = "<group>"; };
+		7F4A7A031C06F6BC00DCF717 /* ALImageBrowserPresentAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALImageBrowserPresentAnimator.m; sourceTree = "<group>"; };
+		7F4A7A051C06F6D700DCF717 /* ALImageBrowserDismissAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALImageBrowserDismissAnimator.h; sourceTree = "<group>"; };
+		7F4A7A061C06F6D700DCF717 /* ALImageBrowserDismissAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALImageBrowserDismissAnimator.m; sourceTree = "<group>"; };
+		7F4A7A081C06FDDA00DCF717 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F7763351C055F3F0034DA87 /* ALImageBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ALImageBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F7763391C055F3F0034DA87 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7F77633B1C055F3F0034DA87 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -67,7 +80,6 @@
 		7F77633E1C055F3F0034DA87 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		7F77633F1C055F3F0034DA87 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		7F7763441C055F3F0034DA87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7F7763471C055F3F0034DA87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F7763491C055F3F0034DA87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F77634E1C055F3F0034DA87 /* ALImageBrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ALImageBrowserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F7763521C055F3F0034DA87 /* ALImageBrowserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALImageBrowserTests.m; sourceTree = "<group>"; };
@@ -119,6 +131,7 @@
 		7F239F3B1C05779D00D2DBCD /* ALImageBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				7F4A79FE1C06F4D300DCF717 /* Animator */,
 				7F3F0E871C06D29F00A67A0E /* Controller */,
 				7F3F0E861C06D29400A67A0E /* View */,
 				7F3F0E851C06D14E00A67A0E /* Model */,
@@ -159,6 +172,19 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		7F4A79FE1C06F4D300DCF717 /* Animator */ = {
+			isa = PBXGroup;
+			children = (
+				7F4A79FF1C06F5B200DCF717 /* ALImageBrowserBaseAnimator.h */,
+				7F4A7A001C06F5B200DCF717 /* ALImageBrowserBaseAnimator.m */,
+				7F4A7A021C06F6BC00DCF717 /* ALImageBrowserPresentAnimator.h */,
+				7F4A7A031C06F6BC00DCF717 /* ALImageBrowserPresentAnimator.m */,
+				7F4A7A051C06F6D700DCF717 /* ALImageBrowserDismissAnimator.h */,
+				7F4A7A061C06F6D700DCF717 /* ALImageBrowserDismissAnimator.m */,
+			);
+			name = Animator;
+			sourceTree = "<group>";
+		};
 		7F77632C1C055F3E0034DA87 = {
 			isa = PBXGroup;
 			children = (
@@ -189,8 +215,10 @@
 				7F77633C1C055F3F0034DA87 /* AppDelegate.m */,
 				7F77633E1C055F3F0034DA87 /* ViewController.h */,
 				7F77633F1C055F3F0034DA87 /* ViewController.m */,
+				7F3C77371C082C4500815040 /* XXTableViewCell.h */,
+				7F3C77381C082C4500815040 /* XXTableViewCell.m */,
 				7F7763441C055F3F0034DA87 /* Assets.xcassets */,
-				7F7763461C055F3F0034DA87 /* LaunchScreen.storyboard */,
+				7F4A7A081C06FDDA00DCF717 /* LaunchScreen.storyboard */,
 				7F239F351C0576AA00D2DBCD /* Main.storyboard */,
 				7F7763491C055F3F0034DA87 /* Info.plist */,
 				7F3F0E761C06B49800A67A0E /* MBProgressHUD+ALShowAlert.h */,
@@ -341,8 +369,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F4A7A091C06FDDA00DCF717 /* LaunchScreen.storyboard in Resources */,
 				7F239F371C0576AA00D2DBCD /* Main.storyboard in Resources */,
-				7F7763481C055F3F0034DA87 /* LaunchScreen.storyboard in Resources */,
 				7F7763451C055F3F0034DA87 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,12 +446,16 @@
 			files = (
 				7F3F0E811C06D0E200A67A0E /* ALImageBrowserRemoteInfo.m in Sources */,
 				7F3F0E751C06A1AF00A67A0E /* ALImageBrowserView.m in Sources */,
+				7F4A7A041C06F6BC00DCF717 /* ALImageBrowserPresentAnimator.m in Sources */,
 				7F7763401C055F3F0034DA87 /* ViewController.m in Sources */,
 				7F77633D1C055F3F0034DA87 /* AppDelegate.m in Sources */,
 				7F239F3A1C05778D00D2DBCD /* ALImageBrowserBaseInfo.m in Sources */,
 				7F3F0E841C06D10400A67A0E /* ALImageBrowserLocalInfo.m in Sources */,
+				7F3C77391C082C4500815040 /* XXTableViewCell.m in Sources */,
 				7F3F0E7E1C06B53000A67A0E /* ALImageBrowserViewController.m in Sources */,
 				7F239F341C05750500D2DBCD /* ALImageBrowserScrollView.m in Sources */,
+				7F4A7A071C06F6D700DCF717 /* ALImageBrowserDismissAnimator.m in Sources */,
+				7F4A7A011C06F5B200DCF717 /* ALImageBrowserBaseAnimator.m in Sources */,
 				7F77633A1C055F3F0034DA87 /* main.m in Sources */,
 				7F3F0E781C06B49800A67A0E /* MBProgressHUD+ALShowAlert.m in Sources */,
 			);
@@ -467,14 +499,6 @@
 				7F239F361C0576AA00D2DBCD /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		7F7763461C055F3F0034DA87 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7F7763471C055F3F0034DA87 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

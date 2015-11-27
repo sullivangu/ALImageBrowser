@@ -87,6 +87,7 @@
         _scrollView.delegate = self;
         _scrollView.showsVerticalScrollIndicator = NO;
         _scrollView.clipsToBounds = YES;
+        _scrollView.alwaysBounceVertical = NO;
         _scrollView.backgroundColor = [UIColor blackColor];
     }
     return _scrollView;

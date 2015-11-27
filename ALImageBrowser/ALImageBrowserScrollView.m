@@ -52,7 +52,11 @@
     
     if (self.info.type == ALImageViewInfoTypeLocalImage) {
         ALImageBrowserLocalInfo *localInfo = (ALImageBrowserLocalInfo *)self.info;
-        self.imageView = [[UIImageView alloc] initWithImage:localInfo.localImage];
+        if (localInfo.url) {
+            self.imageView = [[UIImageView alloc] initWithImage:[UIImage imageWithData:[[NSData alloc] initWithContentsOfURL:localInfo.url]]];
+        }else if (localInfo.image) {
+            self.imageView = [[UIImageView alloc] initWithImage:localInfo.localImage];
+        }
         self.imageView.contentMode = UIViewContentModeScaleAspectFit;
         self.imageView.userInteractionEnabled = YES;
         [self.scrollView addSubview:self.imageView];

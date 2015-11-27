@@ -12,8 +12,11 @@
 @class ALImageBrowserViewController;
 
 @protocol ALImageBrowserViewControllerDelegate <NSObject>
-- (void)imageBrowserViewController:(ALImageBrowserViewController *)imageBrowserViewController didDeleteImageAtInfo:(ALImageBrowserBaseInfo *)info;
+@required
 - (void)imageBrowserViewController:(ALImageBrowserViewController *)imageBrowserViewController didQuitWithInfo:(ALImageBrowserBaseInfo *)info lastRect:(CGRect)rect;
+@optional
+- (void)imageBrowserViewController:(ALImageBrowserViewController *)imageBrowserViewController didDeleteImageAtInfo:(ALImageBrowserBaseInfo *)info;
+
 @end
 
 typedef NS_ENUM(NSInteger, ALImageBrowserViewLongPressOperationType) {
