@@ -69,7 +69,18 @@
 
 - (void)reloadDataAtIndex:(NSInteger)index {
     self.infoArray = [self fetchInfoArray];
-    [self.imageBrowserView reloadDataAtIndex:index];
+    if (self.infoArray.count == 0) {
+        ALImageBrowserBaseInfo *info = [[ALImageBrowserBaseInfo alloc] init];
+        info.state = ALImageViewInfoStateError;
+        [self imageBrowserView:self.imageBrowserView singleTapAtInfo:info imageViewCurrentRect:CGRectZero];
+        return;
+    }
+    if (index >= self.infoArray.count) {
+        [self.imageBrowserView reloadDataAtIndex:self.infoArray.count - 1];
+    }else{
+        [self.imageBrowserView reloadDataAtIndex:index];
+    }
+    
 }
 
 #pragma ALImageBrowserViewDelegate
@@ -80,7 +91,7 @@
 - (void)imageBrowserView:(ALImageBrowserView *)imageBrowserView singleTapAtInfo:(ALImageBrowserBaseInfo *)info imageViewCurrentRect:(CGRect)rect{
     self.dismissAnimatorBeginRect = rect;
     self.dismissBeginImageInfo = info;
-    [self dismissViewControllerAnimated:YES completion:^{}];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (NSArray *)imageBrowserInfoArrayForImageBrowserView:(ALImageBrowserView *)imageBrowserView {
