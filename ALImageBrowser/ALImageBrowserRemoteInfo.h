@@ -12,7 +12,6 @@
 
 @property (nonatomic, strong) UIImage *placeHolderImage;
 @property (nonatomic, strong) UIImage *downloadedImage;
-@property (nonatomic, assign) BOOL isImageCached;
 
 
 @end

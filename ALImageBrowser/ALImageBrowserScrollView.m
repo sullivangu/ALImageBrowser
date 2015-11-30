@@ -67,13 +67,13 @@
         ALImageBrowserRemoteInfo *remoteInfo = (ALImageBrowserRemoteInfo *)self.info;
         if (remoteInfo.placeHolderImage) {
             self.placeholderImageView = [[UIImageView alloc] initWithImage:remoteInfo.placeHolderImage];
-             [self addSubview:self.placeholderImageView];
+            [self addSubview:self.placeholderImageView];
             [self.placeholderImageView mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.center.equalTo(self);
             }];
         }else{
             self.placeholderImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
-             [self addSubview:self.placeholderImageView];
+            [self addSubview:self.placeholderImageView];
             [self.placeholderImageView mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.center.equalTo(self);
                 make.size.mas_equalTo(CGSizeMake(40,40));
@@ -81,18 +81,27 @@
         }
         self.placeholderImageView.contentMode = UIViewContentModeScaleAspectFit;
         self.placeholderImageView.userInteractionEnabled = YES;
-       
         typeof(self) __weak weakself = self;
         [self.placeholderImageView setImageWithURL:remoteInfo.url completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-            weakself.placeholderImageView.hidden = YES;
-            remoteInfo.downloadedImage = image;
-            weakself.imageView = [[UIImageView alloc] initWithImage:image];
-            weakself.imageView.contentMode = UIViewContentModeScaleAspectFit;
-            weakself.imageView.userInteractionEnabled = YES;
-            [weakself.scrollView addSubview:weakself.imageView];
-            weakself.scrollView.contentSize = weakself.imageView.bounds.size;
-            [weakself configGestures];
-            [weakself setZoomScale];
+            if (!error) {
+                weakself.placeholderImageView.hidden = YES;
+                remoteInfo.downloadedImage = image;
+                remoteInfo.state = ALImageViewInfoStateImageCached;
+                weakself.imageView = [[UIImageView alloc] initWithImage:image];
+                weakself.imageView.contentMode = UIViewContentModeScaleAspectFit;
+                weakself.imageView.userInteractionEnabled = YES;
+                [weakself.scrollView addSubview:weakself.imageView];
+                weakself.scrollView.contentSize = weakself.imageView.bounds.size;
+                [weakself configGestures];
+                [weakself setZoomScale];
+            }else{
+                remoteInfo.state = ALImageViewInfoStateError;
+                UIGestureRecognizer *touchOnImage = [[UITapGestureRecognizer alloc] initWithTarget:weakself action:@selector(singleTap:)];
+                [weakself.placeholderImageView addGestureRecognizer:touchOnImage];
+                weakself.placeholderImageView.image = [UIImage imageNamed:@"network"];
+                UIGestureRecognizer *touch = [[UITapGestureRecognizer alloc] initWithTarget:weakself action:@selector(singleTap:)];
+                [weakself addGestureRecognizer:touch];
+            }
         } usingActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
 
     }

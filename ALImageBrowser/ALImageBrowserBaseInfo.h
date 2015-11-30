@@ -9,6 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger, ALImageViewInfoState) {
+    ALImageViewInfoStateImageNotCached,
+    ALImageViewInfoStateImageCached,
+    ALImageViewInfoStateError,
+};
+
 typedef NS_ENUM(NSInteger,ALImageViewInfoType) {
     ALImageViewInfoTypeRemoteImage,
     ALImageViewInfoTypeLocalImage
@@ -19,8 +25,10 @@ typedef NS_ENUM(NSInteger,ALImageViewInfoType) {
 
 //本地图片或者远端图片
 @property (nonatomic, assign) ALImageViewInfoType type;
-@property (nonatomic, assign) CGRect rect;
 @property (nonatomic, strong) NSURL *url;
+
+//状态
+@property (nonatomic, assign) ALImageViewInfoState state;
 
 //获取图片
 @property (nonatomic, readonly) UIImage *image;

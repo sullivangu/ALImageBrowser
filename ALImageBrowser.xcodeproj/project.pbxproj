@@ -13,6 +13,7 @@
 		7F239F371C0576AA00D2DBCD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F239F351C0576AA00D2DBCD /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		7F239F3A1C05778D00D2DBCD /* ALImageBrowserBaseInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F239F391C05778D00D2DBCD /* ALImageBrowserBaseInfo.m */; settings = {ASSET_TAGS = (); }; };
 		7F3C77391C082C4500815040 /* XXTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3C77381C082C4500815040 /* XXTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		7F3C77401C0BEB2C00815040 /* ALImageBrowserAnimatorInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3C773F1C0BEB2C00815040 /* ALImageBrowserAnimatorInfo.m */; settings = {ASSET_TAGS = (); }; };
 		7F3F0E751C06A1AF00A67A0E /* ALImageBrowserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3F0E741C06A1AF00A67A0E /* ALImageBrowserView.m */; settings = {ASSET_TAGS = (); }; };
 		7F3F0E781C06B49800A67A0E /* MBProgressHUD+ALShowAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3F0E771C06B49800A67A0E /* MBProgressHUD+ALShowAlert.m */; settings = {ASSET_TAGS = (); }; };
 		7F3F0E7E1C06B53000A67A0E /* ALImageBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3F0E7D1C06B53000A67A0E /* ALImageBrowserViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -56,6 +57,8 @@
 		7F239F391C05778D00D2DBCD /* ALImageBrowserBaseInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALImageBrowserBaseInfo.m; sourceTree = "<group>"; };
 		7F3C77371C082C4500815040 /* XXTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXTableViewCell.h; sourceTree = "<group>"; };
 		7F3C77381C082C4500815040 /* XXTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXTableViewCell.m; sourceTree = "<group>"; };
+		7F3C773E1C0BEB2C00815040 /* ALImageBrowserAnimatorInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALImageBrowserAnimatorInfo.h; sourceTree = "<group>"; };
+		7F3C773F1C0BEB2C00815040 /* ALImageBrowserAnimatorInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALImageBrowserAnimatorInfo.m; sourceTree = "<group>"; };
 		7F3F0E731C06A1AF00A67A0E /* ALImageBrowserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALImageBrowserView.h; sourceTree = "<group>"; };
 		7F3F0E741C06A1AF00A67A0E /* ALImageBrowserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALImageBrowserView.m; sourceTree = "<group>"; };
 		7F3F0E761C06B49800A67A0E /* MBProgressHUD+ALShowAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+ALShowAlert.h"; sourceTree = "<group>"; };
@@ -148,6 +151,8 @@
 				7F3F0E801C06D0E200A67A0E /* ALImageBrowserRemoteInfo.m */,
 				7F3F0E821C06D10400A67A0E /* ALImageBrowserLocalInfo.h */,
 				7F3F0E831C06D10400A67A0E /* ALImageBrowserLocalInfo.m */,
+				7F3C773E1C0BEB2C00815040 /* ALImageBrowserAnimatorInfo.h */,
+				7F3C773F1C0BEB2C00815040 /* ALImageBrowserAnimatorInfo.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -453,6 +458,7 @@
 				7F3F0E841C06D10400A67A0E /* ALImageBrowserLocalInfo.m in Sources */,
 				7F3C77391C082C4500815040 /* XXTableViewCell.m in Sources */,
 				7F3F0E7E1C06B53000A67A0E /* ALImageBrowserViewController.m in Sources */,
+				7F3C77401C0BEB2C00815040 /* ALImageBrowserAnimatorInfo.m in Sources */,
 				7F239F341C05750500D2DBCD /* ALImageBrowserScrollView.m in Sources */,
 				7F4A7A071C06F6D700DCF717 /* ALImageBrowserDismissAnimator.m in Sources */,
 				7F4A7A011C06F5B200DCF717 /* ALImageBrowserBaseAnimator.m in Sources */,

@@ -11,15 +11,37 @@
 #import "PSTAlertController.h"
 #import "MBProgressHUD+ALShowAlert.h"
 #import "Masonry.h"
+#import "ALImageBrowserPresentAnimator.h"
 #import "ALImageBrowserDismissAnimator.h"
 
-@interface ALImageBrowserViewController () <ALImageBrowserViewDelegate>
+@interface ALImageBrowserViewController () <ALImageBrowserViewDelegate, UIViewControllerTransitioningDelegate>
 
 @property (nonatomic, strong) ALImageBrowserView *imageBrowserView;
+@property (nonatomic, assign) ALImageBrowserViewControllerPresentType presentType;
+@property (nonatomic, assign) CGRect dismissAnimatorBeginRect;
+@property (nonatomic, strong) ALImageBrowserBaseInfo *dismissBeginImageInfo;
 
 @end
 
 @implementation ALImageBrowserViewController
+
+- (instancetype)initWithPresentType:(ALImageBrowserViewControllerPresentType)presentType {
+    if (self = [super init]) {
+        self.presentType = presentType;
+        if (self.presentType == ALImageBrowserViewControllerPresentTypeCustomed) {
+            self.modalPresentationStyle = UIModalPresentationCustom;
+            self.transitioningDelegate = self;
+        }
+    }
+    return self;
+}
+
+- (instancetype)init {
+    if (self = [super init]) {
+        @throw [[NSException alloc] initWithName:@"wrong init method" reason:@"use initWithPresentType" userInfo:nil];
+    }
+    return nil;
+}
 
 - (void)dealloc {
     NSLog(@"ALImageBrowserViewController dealloc");
@@ -45,10 +67,9 @@
 }
 
 - (void)imageBrowserView:(ALImageBrowserView *)imageBrowserView singleTapAtInfo:(ALImageBrowserBaseInfo *)info imageViewCurrentRect:(CGRect)rect{
-    if ([self.delegate respondsToSelector:@selector(imageBrowserViewController:didQuitWithInfo:lastRect:)]) {
-        [self.delegate imageBrowserViewController:self didQuitWithInfo:info lastRect:rect];
-    }
-   // [self dismissViewControllerAnimated:YES completion:^{}];
+    self.dismissAnimatorBeginRect = rect;
+    self.dismissBeginImageInfo = info;
+    [self dismissViewControllerAnimated:YES completion:^{}];
 }
 
 - (NSArray *)imageBrowserInfoArrayForImageBrowserView:(ALImageBrowserView *)imageBrowserView {
@@ -98,6 +119,46 @@
 {
     NSString *msg = error? @"保存失败" : @"保存成功";
     [MBProgressHUD showAlertWithString:msg holdingSeconds:0.5 inView:self.view allowUserInteract:YES];
+}
+
+#pragma UINavigationControllerDelegate
+- (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
+                                                                            presentingController:(UIViewController *)presenting
+                                                                                sourceController:(UIViewController *)source {
+    if ([presented isKindOfClass:[ALImageBrowserViewController class]]) {
+        if ([self.delegate respondsToSelector:@selector(imageBrowserViewController:didPresentWithInfo:)]) {
+            ALImageBrowserAnimatorInfo *info = [self.delegate imageBrowserViewController:self didPresentWithInfo:nil];
+            if (info) {
+                ALImageBrowserPresentAnimator *animator = [[ALImageBrowserPresentAnimator alloc] init];
+                animator.beginRect = info.beginRect;
+                animator.image = info.image;
+                return animator;
+            }
+        }
+    }
+    return nil;
+}
+
+- (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
+    if ([dismissed isKindOfClass:[ALImageBrowserViewController class]]) {
+        if ([self.delegate respondsToSelector:@selector(imageBrowserViewController:didDismissWithInfo:)]) {
+            if (self.dismissBeginImageInfo.state == ALImageViewInfoStateImageCached) {
+                ALImageBrowserAnimatorInfo *info = [self.delegate imageBrowserViewController:self didDismissWithInfo:self.dismissBeginImageInfo];
+                ALImageBrowserDismissAnimator *animator = [[ALImageBrowserDismissAnimator alloc] init];
+                animator.beginRect = self.dismissAnimatorBeginRect;
+                animator.image = info.image;
+                animator.endRect = info.endRect;
+                return animator;
+            }else {
+                ALImageBrowserDismissAnimator *animator = [[ALImageBrowserDismissAnimator alloc] init];
+                animator.beginRect = CGRectZero;
+                animator.image = nil;
+                animator.endRect = CGRectZero;
+                return animator;
+            }
+        }
+    }
+    return nil;
 }
  
 
