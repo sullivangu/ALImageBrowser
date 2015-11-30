@@ -62,7 +62,6 @@
     self.scrollView.contentOffset = CGPointMake(index * self.screenWidth, 0);
     self.pageControl.numberOfPages = self.scrollView.contentSize.width/self.scrollView.frame.size.width;
     self.pageControl.currentPage = index;
-
 }
 
 #pragma private

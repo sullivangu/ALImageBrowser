@@ -19,9 +19,9 @@
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate, ALImageBrowserViewControllerDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic, strong) UITableView *tableview;
-@property (nonatomic, strong) NSArray *cellData;
+@property (nonatomic, strong) NSMutableArray *cellData;
 @property (nonatomic, strong) ALImageBrowserAnimatorInfo *presentAnimatorInfo;
-@property (nonatomic, strong) NSArray *imageBrowserInfoArray;
+@property (nonatomic, strong) NSMutableArray *imageBrowserInfoArray;
 
 @end
 
@@ -39,11 +39,6 @@
     }];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    NSLog(@"ViewController viewWillAppear");
-}
-
 #pragma getter/setter
 
 - (NSArray *)cellData {
@@ -53,11 +48,12 @@
         [array addObject:[@{@"url":[NSURL URLWithString:@"http://b.hiphotos.baidu.com/image/w%3D310/sign=b872e3b4808ba61edfeece2e713597cc/50da81cb39dbb6fd5b2100580b24ab18972b3751.jpg"],@"isCached":@NO,@"downloadedImage": [[UIImage alloc] init]} mutableCopy]];
         [array addObject:[@{@"url":[NSURL URLWithString:@"http://g.hiphotos.baidu.com/image/w%3D310/sign=f167760a99504fc2a25fb604d5dde7f0/18d8bc3eb13533fa5cc2692caad3fd1f41345bb8.jpg"],@"isCached":@NO,@"downloadedImage": [[UIImage alloc] init]} mutableCopy]];
         [array addObject:[@{@"url":[NSURL URLWithString:@"http://f.hiphotos.baidu.com/image/w%3D310/sign=6bb3018d48ed2e73fce9802db700a16d/42166d224f4a20a41bead2ce92529822730ed0c7.jpg"],@"isCached":@NO,@"downloadedImage": [[UIImage alloc] init]} mutableCopy]];
-        [array addObject:[@{@"url":[NSURL URLWithString:@"http://image.baidu.com/search/detail?ct=503316480&z=&tn=baiduimagedetail&ipn=d&word=%E5%AE%A0%E7%89%A9%E8%90%8C%E5%9B%BE&step_word=&ie=utf-8&in=&cl=2&lm=-1&st=-1&cs=4103130088,2567396922&os=2449609077,1374280617&simid=4187926937,800733308&pn=2&rn=1&di=91562822670&ln=1000&fr=&fmq=1448621736184_R&ic=0&s=undefined&se=&sme=&tab=0&width=&height=&face=undefined&is=&istype=0&ist=&jit=&bdtype=0&gsm=0&objurl=http%3A%2F%2Fimages.99pet.com%2FInfoImages%2Fwm600_450%2F1d770941f8d44c6e85ba4c0eb736ef69.jpg"],@"isCached":@NO,@"downloadedImage": [[UIImage alloc] init]} mutableCopy]];
-        [array addObject:[@{@"url":[NSURL URLWithString:@"http://img2.imgtn.bdimg.com/it/u=1765676471,761941527&fm=21&gp=0.jpg"],@"isCached":@NO,@"downloadedImage": [[UIImage alloc] init]} mutableCopy]];
-        [array addObject:[@{@"url":[NSURL URLWithString:@"http://img5.imgtn.bdimg.com/it/u=933749529,2597643398&fm=21&gp=0.jpg"],@"isCached":@NO,@"downloadedImage": [[UIImage alloc] init]} mutableCopy]];
-        [array addObject:[@{@"url":[NSURL URLWithString:@"http://img0.imgtn.bdimg.com/it/u=3845573724,3286232818&fm=21&gp=0.jpg"],@"isCached":@NO,@"downloadedImage": [[UIImage alloc] init]} mutableCopy]];
-        _cellData = array;
+        [array addObject:[@{@"url":[NSURL URLWithString:@"http://www.kubeijie.com/data/files/mall/magazine/201307230927507038.jpg"],@"isCached":@NO,@"downloadedImage": [[UIImage alloc] init]} mutableCopy]];
+        [array addObject:[@{@"url":[NSURL URLWithString:@"http://www.kubeijie.com/data/files/mall/magazine/201307230927556891.jpg"],@"isCached":@NO,@"downloadedImage": [[UIImage alloc] init]} mutableCopy]];
+        [array addObject:[@{@"url":[NSURL URLWithString:@"http://www.kubeijie.com/data/files/mall/magazine/201307230928076329.jpg"],@"isCached":@NO,@"downloadedImage": [[UIImage alloc] init]} mutableCopy]];
+        [array addObject:[@{@"url":[NSURL URLWithString:@"http://www.kubeijie.com/data/files/mall/magazine/201307230928118265.jpg"],@"isCached":@NO,@"downloadedImage": [[UIImage alloc] init]} mutableCopy]];
+
+        _cellData = [array mutableCopy];
     }
     return _cellData;
 }
@@ -111,6 +107,19 @@
     //
     ALImageBrowserViewController *vc = [[ALImageBrowserViewController alloc] initWithPresentType:ALImageBrowserViewControllerPresentTypeCustomed];
     vc.delegate = self;
+    //显示的第一张图片
+    vc.startIndex = indexPath.row;
+    vc.longpressOperationArray = @[@(ALImageBrowserViewLongPressOperationTypeSave),@(ALImageBrowserViewLongPressOperationTypeDelete)];
+    [self.navigationController presentViewController:vc animated:YES
+                                          completion:^{}];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+     return 150;
+}
+
+#pragma ALImageBrowserViewControllerDelegate
+- (NSArray *)infoArrayForImageBrowserViewController:(ALImageBrowserViewController *)imageBrowserViewController {
     //图片数据
     NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:self.cellData.count];
     @autoreleasepool {
@@ -130,19 +139,9 @@
         }
     }
     self.imageBrowserInfoArray = array;
-    vc.infoArray = self.imageBrowserInfoArray;
-    //显示的第一张图片
-    vc.startIndex = indexPath.row;
-    vc.longpressOperationArray = @[@(ALImageBrowserViewLongPressOperationTypeSave),@(ALImageBrowserViewLongPressOperationTypeDelete)];
-    [self.navigationController presentViewController:vc animated:YES
-                                          completion:^{}];
+    return self.imageBrowserInfoArray;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-     return 150;
-}
-
-#pragma ALImageBrowserViewControllerDelegate
 - (ALImageBrowserAnimatorInfo *)imageBrowserViewController:(ALImageBrowserViewController *)imageBrowserViewController didPresentWithInfo:(ALImageBrowserBaseInfo *)info{
     return self.presentAnimatorInfo;
 }
@@ -155,6 +154,14 @@
 }
 
 - (void)imageBrowserViewController:(ALImageBrowserViewController *)imageBrowserViewController didDeleteImageAtInfo:(ALImageBrowserBaseInfo *)info {
+    NSInteger index = [self.imageBrowserInfoArray indexOfObject:info];
+    [self.imageBrowserInfoArray removeObjectAtIndex:index];
+    [self.cellData removeObjectAtIndex:index];
+    [self.tableview reloadData];
+    [imageBrowserViewController reloadDataAtIndex:index];
+}
+
+- (void)imageBrowserViewController:(ALImageBrowserViewController *)imageBrowserViewController didShareImageAtInfo:(ALImageBrowserBaseInfo *)info {
     
 }
 

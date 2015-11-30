@@ -20,6 +20,7 @@
 @property (nonatomic, assign) ALImageBrowserViewControllerPresentType presentType;
 @property (nonatomic, assign) CGRect dismissAnimatorBeginRect;
 @property (nonatomic, strong) ALImageBrowserBaseInfo *dismissBeginImageInfo;
+@property (nonatomic, strong) NSArray *infoArray;
 
 @end
 
@@ -59,6 +60,16 @@
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
+}
+
+#pragma public method 
+- (void)reloadData {
+    [self reloadDataAtIndex:0];
+}
+
+- (void)reloadDataAtIndex:(NSInteger)index {
+    self.infoArray = [self fetchInfoArray];
+    [self.imageBrowserView reloadDataAtIndex:index];
 }
 
 #pragma ALImageBrowserViewDelegate
@@ -160,6 +171,15 @@
     }
     return nil;
 }
+
+#pragma private
+- (NSArray *)fetchInfoArray {
+    if ([self.delegate respondsToSelector:@selector(infoArrayForImageBrowserViewController:)]) {
+        return [self.delegate infoArrayForImageBrowserViewController:self];
+    }else{
+        return nil;
+    }
+}
  
 
 #pragma setter/getter
@@ -170,5 +190,11 @@
     return _imageBrowserView;
 }
 
+- (NSArray *)infoArray {
+    if (!_infoArray) {
+        _infoArray = [self fetchInfoArray];
+    }
+    return _infoArray;
+}
 
 @end
