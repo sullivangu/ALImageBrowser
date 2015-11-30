@@ -10,11 +10,6 @@
 
 @implementation ALImageBrowserPresentAnimator
 
-- (void)dealloc {
-    NSLog(@"ALImageBrowserPresentAnimator dealloc");
-}
-
-
 - (void)animateTransitionEvent {
     UIImageView *tmpImageView  = [[UIImageView alloc] initWithFrame:self.beginRect];
     tmpImageView.contentMode = UIViewContentModeScaleAspectFit;

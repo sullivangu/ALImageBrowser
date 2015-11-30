@@ -42,7 +42,6 @@
 - (void)dealloc {
     self.imageView = nil;
     self.scrollView = nil;
-    NSLog(@"ALImageBrowserScrollView dealloc");
 }
 
 #pragma private method

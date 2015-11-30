@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ALImageBrowser/ALImageBrowserViewController.m"
-            timestampString = "470558938.170616"
+            timestampString = "470559920.338323"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "209"
-            endingLineNumber = "209"
+            startingLineNumber = "205"
+            endingLineNumber = "205"
             landmarkName = "-infoArray"
             landmarkType = "5">
          </BreakpointContent>

@@ -44,10 +44,6 @@
     return nil;
 }
 
-- (void)dealloc {
-    NSLog(@"ALImageBrowserViewController dealloc");
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:self.imageBrowserView];
